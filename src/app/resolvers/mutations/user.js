@@ -13,7 +13,12 @@ let mutations = {
 
   updateUser: async (_, {id, name, login, password}) => {
     const user= await User.findByPk(id)
-    user.update({name, login, password})
+    if(password=="" || password==null){
+      user.update({...user,name, login})
+    }else{
+      user.update({name, login, password})
+    }
+    
     return user
   },
 

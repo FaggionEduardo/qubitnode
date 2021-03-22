@@ -107,6 +107,9 @@ module.exports = gql`
     name:String!
     email:String!
     acting:String!
+    formation:String
+    linknames:String
+    links:String
     profile64:String!
   }
   type PaginateMember {
@@ -192,7 +195,7 @@ module.exports = gql`
     login(login: String!, password: String!): AuthResponse
 
     createUser(name:String!,login:String!,password:String!):User! 
-    updateUser(id:ID!,name:String!,login:String!,password:String!):User! @isAuthenticated
+    updateUser(id:ID!,name:String!,login:String!,password:String):User! @isAuthenticated
     deleteUser(id:ID!):Boolean @isAuthenticated
 
     createNews(date:String!,text:String!,urlname:String,url:String,imagename:String,image64:String):News! @isAuthenticated
@@ -219,12 +222,12 @@ module.exports = gql`
     updateThese(id:ID!,title:String!,link:String!):These! @isAuthenticated
     deleteThese(id:ID!):Boolean @isAuthenticated
 
-    createPublication(title:String!,description:String!,linknames:String!links:String!,imagename:String!,image64:String!):Publication! @isAuthenticated
+    createPublication(title:String!,description:String!,linknames:String,links:String!,imagename:String!,image64:String!):Publication! @isAuthenticated
     updatePublication(id:ID!,title:String!,description:String!,linknames:String!links:String!,imagename:String!,image64:String!):Publication! @isAuthenticated
     deletePublication(id:ID!):Boolean @isAuthenticated
 
-    createMember(name:String!,email:String!,acting:String!,profile64:String!):Member! @isAuthenticated
-    updateMember(id:ID!,name:String!,email:String!,acting:String!,profile64:String!):Member! @isAuthenticated
+    createMember(name:String!,email:String!,acting:String!,formation:String,links:String,linknames:String,profile64:String!):Member! @isAuthenticated
+    updateMember(id:ID!,name:String!,email:String!,acting:String!,formation:String!,links:String!,linknames:String!,profile64:String!):Member! @isAuthenticated
     deleteMember(id:ID!):Boolean @isAuthenticated
 
     createUpcoming(date:String!,text:String!,link:String!):Upcoming! @isAuthenticated

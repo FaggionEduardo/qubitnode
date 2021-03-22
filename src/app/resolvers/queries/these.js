@@ -10,7 +10,7 @@ let queries = {
         const these= await These.paginate(options)
         return(these)
     },
-    theses: ()=> These.findAll(),
+    theses: ()=> These.findAll({order: [['id', 'DESC']]}),
     these: (_, {id}) => These.findByPk(id),
 }
 

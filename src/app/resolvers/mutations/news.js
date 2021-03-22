@@ -1,5 +1,6 @@
 const { News } = require('../../models')
 
+
 let mutations = {
 
   createNews: async (_, {date,text,urlname,url,imagename,image64}) => {

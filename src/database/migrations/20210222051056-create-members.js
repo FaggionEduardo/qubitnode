@@ -21,6 +21,18 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      formation: {
+        allowNull: true,
+        type: Sequelize.STRING,
+      },
+      links: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+      },
+      linknames: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+      },
       profile64: {
         allowNull: false,
         type: Sequelize.TEXT('medium'),

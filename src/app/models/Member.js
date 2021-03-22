@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     acting: DataTypes.STRING,
+    formation: DataTypes.STRING,
+    links: DataTypes.TEXT,
+    linknames: DataTypes.TEXT,
     profile64: DataTypes.TEXT('medium'),
   }, {
     sequelize,

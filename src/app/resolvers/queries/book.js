@@ -10,7 +10,7 @@ let queries = {
         const book= await Book.paginate(options)
         return(book)
     },
-    books: ()=> Book.findAll(),
+    books: ()=> Book.findAll({order: [['id', 'DESC']]}),
     book: (_, {id}) => Book.findByPk(id),
 }
 

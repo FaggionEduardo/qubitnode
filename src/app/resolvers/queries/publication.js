@@ -10,7 +10,7 @@ let queries = {
         const publication= await Publication.paginate(options)
         return(publication)
     },
-    publications: ()=> Publication.findAll(),
+    publications: ()=> Publication.findAll({order: [['id', 'DESC']]}),
     publication: (_, {id}) => Publication.findByPk(id),
 }
 

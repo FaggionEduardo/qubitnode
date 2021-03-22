@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Publication.init({
-    title: DataTypes.STRING,
+    title: DataTypes.TEXT,
     description: DataTypes.TEXT,
     linknames: DataTypes.TEXT,
     links: DataTypes.TEXT,

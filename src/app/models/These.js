@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   These.init({
-    title: DataTypes.STRING,
-    link: DataTypes.STRING,
+    title: DataTypes.TEXT,
+    link: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'These',

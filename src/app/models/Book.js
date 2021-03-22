@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   Book.init({
-    title: DataTypes.STRING,
-    link: DataTypes.STRING,
+    title: DataTypes.TEXT,
+    link: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Book',
