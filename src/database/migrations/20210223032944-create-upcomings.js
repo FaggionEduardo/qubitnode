@@ -19,7 +19,7 @@ module.exports = {
       },
       link: {
         allowNull: true,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       created_at: {
         allowNull: false,

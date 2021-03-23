@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     date: DataTypes.DATE,
     text: DataTypes.TEXT,
     urlname: DataTypes.STRING,
-    url: DataTypes.STRING,
+    url: DataTypes.TEXT,
     imagename: DataTypes.STRING,
     image64: DataTypes.TEXT('medium')
   }, {

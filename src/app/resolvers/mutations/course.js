@@ -2,14 +2,14 @@ const { Course } = require('../../models')
 
 let mutations = {
 
-  createCourse: async (_, {title,cod,description,period}) => {
-    const course= await Course.create({title,cod,description,period})
+  createCourse: async (_, {title,cod,description,period,link}) => {
+    const course= await Course.create({title,cod,description,period,link})
     return(course)
   },
 
-  updateCourse: async (_, {id,title,cod,description,period}) => {
+  updateCourse: async (_, {id,title,cod,description,period,link}) => {
     const course= await Course.findByPk(id)
-    course.update({title,cod,description,period})
+    course.update({title,cod,description,period,link})
     return course
   },
 

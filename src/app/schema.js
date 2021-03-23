@@ -51,6 +51,7 @@ module.exports = gql`
     cod:String!
     description:String!
     period:String!
+    link:String
   }
   type PaginateCourse {
     docs:[Course!]
@@ -206,8 +207,8 @@ module.exports = gql`
     updateOpening(id:ID!,title:String!,description:String!,link:String!,minqualifications:String!,prefqualifications:String!):Opening! @isAuthenticated
     deleteOpening(id:ID!):Boolean @isAuthenticated
 
-    createCourse(title:String!,cod:String!,description:String!,period:String!):Course! @isAuthenticated
-    updateCourse(id:ID!,title:String!,cod:String!,description:String!,period:String!):Course! @isAuthenticated
+    createCourse(title:String!,cod:String!,description:String!,period:String!,link:String):Course! @isAuthenticated
+    updateCourse(id:ID!,title:String!,cod:String!,description:String!,period:String!,link:String):Course! @isAuthenticated
     deleteCourse(id:ID!):Boolean @isAuthenticated
 
     createTalk(date:String!,text:String!,link:String!):Talk! @isAuthenticated

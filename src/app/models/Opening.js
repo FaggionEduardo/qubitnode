@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Opening.init({
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
-    link: DataTypes.STRING,
+    link: DataTypes.TEXT,
     minqualifications: DataTypes.TEXT,
     prefqualifications: DataTypes.TEXT,
   }, {

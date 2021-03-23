@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Upcoming.init({
     date: DataTypes.DATE,
     text: DataTypes.TEXT,
-    link: DataTypes.STRING,
+    link: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Upcoming',
