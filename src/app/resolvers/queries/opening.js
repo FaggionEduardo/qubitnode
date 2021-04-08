@@ -10,7 +10,7 @@ let queries = {
         const opening= await Opening.paginate(options)
         return(opening)
     },
-    openings: ()=> Opening.findAll(),
+    openings: ()=> Opening.findAll({order: [['id', 'DESC']]}),
     opening: (_, {id}) => Opening.findByPk(id),
 }
 

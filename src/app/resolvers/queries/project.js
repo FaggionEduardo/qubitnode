@@ -10,7 +10,7 @@ let queries = {
         const project= await Project.paginate(options)
         return(project)
     },
-    projects: ()=> Project.findAll(),
+    projects: ()=> Project.findAll({order: [['id', 'DESC']]}),
     project: (_, {id}) => Project.findByPk(id),
 }
 

@@ -10,7 +10,7 @@ let queries = {
         const course= await Course.paginate(options)
         return(course)
     },
-    courses: ()=> Course.findAll(),
+    courses: ()=> Course.findAll({order: [['id', 'DESC']]}),
     course: (_, {id}) => Course.findByPk(id),
 }
 
