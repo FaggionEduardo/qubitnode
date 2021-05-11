@@ -1,6 +1,6 @@
-let queries={
+let queries = {
 
- }
+}
 
 const modules = [
   require('./user'),
@@ -14,6 +14,7 @@ const modules = [
   require('./member'),
   require('./upcoming'),
   require('./project'),
+  require('./media'),
 ]
 
 modules.forEach((module) => {

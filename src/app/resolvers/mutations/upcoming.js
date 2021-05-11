@@ -2,22 +2,24 @@ const { Upcoming } = require('../../models')
 
 let mutations = {
 
-  createUpcoming: async (_, {date,text,link}) => {
-    const upcoming= await Upcoming.create({date,text,link})
-    return(upcoming)
+  createUpcoming: async (_, { year, location, text, link }) => {
+    year = +year
+    const upcoming = await Upcoming.create({ year, location, text, link })
+    return (upcoming)
   },
 
-  updateUpcoming: async (_, {id,date,text,link}) => {
-    const upcoming= await Upcoming.findByPk(id)
-    upcoming.update({date,text,link})
+  updateUpcoming: async (_, { id, year, location, text, link }) => {
+    const upcoming = await Upcoming.findByPk(id)
+    year = +year
+    upcoming.update({ year, location, text, link })
     return upcoming
   },
 
-  deleteUpcoming: async (_, {id}) => {
-    const upcoming= await Upcoming.findByPk(id)
+  deleteUpcoming: async (_, { id }) => {
+    const upcoming = await Upcoming.findByPk(id)
     upcoming.destroy()
-    return(true);
+    return (true);
   },
 }
 
-module.exports =  mutations
+module.exports = mutations

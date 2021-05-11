@@ -1,9 +1,9 @@
-let mutations={
+let mutations = {
 
 }
 
 const modules = [
-  require('./auth'), 
+  require('./auth'),
   require('./user'),
   require('./news'),
   require('./opening'),
@@ -15,6 +15,7 @@ const modules = [
   require('./member'),
   require('./upcoming'),
   require('./project'),
+  require('./media'),
 ]
 
 modules.forEach((module) => {

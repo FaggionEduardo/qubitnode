@@ -9,9 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      date: {
+      year: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.INTEGER,
+      },
+      location: {
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       text: {
         allowNull: false,

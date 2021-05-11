@@ -6,12 +6,13 @@ const sequelizePaginate = require('sequelize-paginate')
 module.exports = (sequelize, DataTypes) => {
   class Upcoming extends Model {
     static associate(models) {
-      
+
     }
   };
 
   Upcoming.init({
-    date: DataTypes.DATE,
+    year: DataTypes.INTEGER,
+    location: DataTypes.STRING,
     text: DataTypes.TEXT,
     link: DataTypes.TEXT,
   }, {

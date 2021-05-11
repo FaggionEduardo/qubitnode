@@ -4,24 +4,22 @@ require('dotenv').config()
 const { Model } = require('sequelize');
 const sequelizePaginate = require('sequelize-paginate')
 module.exports = (sequelize, DataTypes) => {
-  class Talk extends Model {
+  class Media extends Model {
     static associate(models) {
 
     }
   };
 
-  Talk.init({
-    year: DataTypes.INTEGER,
-    location: DataTypes.STRING,
-    text: DataTypes.TEXT,
+  Media.init({
+    title: DataTypes.TEXT,
     link: DataTypes.TEXT,
   }, {
     sequelize,
-    modelName: 'Talk',
+    modelName: 'Media',
     underscored: true,
   });
 
-  sequelizePaginate.paginate(Talk)
+  sequelizePaginate.paginate(Media)
 
-  return Talk
+  return Media
 }

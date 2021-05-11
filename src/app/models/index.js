@@ -17,6 +17,7 @@ const modules = [
   require('./Member'),
   require('./Upcoming'),
   require('./Project'),
+  require('./Media'),
 ]
 
 modules.forEach((module) => {

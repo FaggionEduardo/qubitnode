@@ -2,27 +2,19 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('talks', {
+    return queryInterface.createTable('media', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      year: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      location: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      text: {
+      title: {
         allowNull: false,
         type: Sequelize.TEXT,
       },
       link: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.TEXT,
       },
       created_at: {
@@ -37,6 +29,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('talks')
+    return queryInterface.dropTable('media')
   }
 };

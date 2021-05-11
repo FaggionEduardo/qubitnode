@@ -60,7 +60,8 @@ module.exports = gql`
   }
   type Talk{
     id: ID!
-    date:String!
+    year:String!
+    location:String!
     text:String!
     link:String!
   }
@@ -86,6 +87,16 @@ module.exports = gql`
   }
   type PaginateThese{
     docs:[These!]
+    pages:Int!
+    total:Int!
+  }
+  type Media{
+    id: ID!
+    title:String!
+    link:String!
+  }
+  type PaginateMedia{
+    docs:[Media!]
     pages:Int!
     total:Int!
   }
@@ -120,7 +131,8 @@ module.exports = gql`
   }
   type Upcoming{
     id: ID!
-    date:String!
+    year:String!
+    location:String!
     text:String!
     link:String!
   }
@@ -174,6 +186,10 @@ module.exports = gql`
     theses: [These!]
     these(id:ID!): These!
 
+    paginateMedias(page:Int!,limit:Int!): PaginateMedia!
+    medias: [Media!]
+    media(id:ID!): Media!
+
     paginatePublications(page:Int!,limit:Int!): PaginatePublication!
     publications: [Publication!]
     publication(id:ID!): Publication!
@@ -211,8 +227,8 @@ module.exports = gql`
     updateCourse(id:ID!,title:String!,cod:String!,description:String!,period:String!,link:String):Course! @isAuthenticated
     deleteCourse(id:ID!):Boolean @isAuthenticated
 
-    createTalk(date:String!,text:String!,link:String!):Talk! @isAuthenticated
-    updateTalk(id:ID!,date:String!,text:String!,link:String!):Talk! @isAuthenticated
+    createTalk(year:String!,location:String!,text:String!,link:String!):Talk! @isAuthenticated
+    updateTalk(id:ID!,year:String!,location:String!,text:String!,link:String!):Talk! @isAuthenticated
     deleteTalk(id:ID!):Boolean @isAuthenticated
 
     createBook(title:String!,link:String!):Book! @isAuthenticated
@@ -223,6 +239,10 @@ module.exports = gql`
     updateThese(id:ID!,title:String!,link:String!):These! @isAuthenticated
     deleteThese(id:ID!):Boolean @isAuthenticated
 
+    createMedia(title:String!,link:String!):Media! @isAuthenticated
+    updateMedia(id:ID!,title:String!,link:String!):Media! @isAuthenticated
+    deleteMedia(id:ID!):Boolean @isAuthenticated
+
     createPublication(title:String!,description:String!,linknames:String,links:String!,imagename:String!,image64:String!):Publication! @isAuthenticated
     updatePublication(id:ID!,title:String!,description:String!,linknames:String!links:String!,imagename:String!,image64:String!):Publication! @isAuthenticated
     deletePublication(id:ID!):Boolean @isAuthenticated
@@ -231,8 +251,8 @@ module.exports = gql`
     updateMember(id:ID!,name:String!,email:String!,acting:String!,formation:String!,links:String!,linknames:String!,profile64:String!):Member! @isAuthenticated
     deleteMember(id:ID!):Boolean @isAuthenticated
 
-    createUpcoming(date:String!,text:String!,link:String!):Upcoming! @isAuthenticated
-    updateUpcoming(id:ID!,date:String!,text:String!,link:String!):Upcoming! @isAuthenticated
+    createUpcoming(year:String!,location:String!,text:String!,link:String!):Upcoming! @isAuthenticated
+    updateUpcoming(id:ID!,year:String!,location:String!,text:String!,link:String!):Upcoming! @isAuthenticated
     deleteUpcoming(id:ID!):Boolean @isAuthenticated
 
     createProject(title:String!,description:String!,linknames:String!,links:String!,imagename:String!,image64:String!,members:String!):Project! @isAuthenticated
